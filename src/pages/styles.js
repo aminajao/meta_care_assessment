@@ -21,6 +21,13 @@ export const Select = tw(StyledSelect)`
 export const Container = tw.div`
     flex
 `;
+export const StickyNavContainer = tw.div`
+  sticky
+  top-0
+  z-10
+  bg-white
+
+`;
 export const NavContainer = tw.div`
   flex
   justify-between

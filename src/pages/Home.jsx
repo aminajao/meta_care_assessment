@@ -16,7 +16,7 @@ const Home = () => {
     <Styles.Container>
       <SideBarContainer />
       <div className="grow">
-        <div>
+        <Styles.StickyNavContainer>
           <Styles.NavContainer>
             <Searchbar />
             <Styles.ProfileContainer>
@@ -63,8 +63,8 @@ const Home = () => {
               <Styles.Button>Export</Styles.Button>
             </div>
           </Styles.Heading>
-        </div>
-        <div className="mx-40">
+        </Styles.StickyNavContainer>
+        <div className="mx-40 mb-[200px]">
           {data?.map((each) => {
             return <AnalyticsCard key={each.id} data={each} />;
           })}

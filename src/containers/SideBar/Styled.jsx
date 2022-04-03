@@ -5,4 +5,6 @@ export const Container = tw.div`
   h-screen
   border-r
   border-r-border
+  sticky
+  top-0
 `;

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 import Arrow from "../assets/arrow.svg";
 import styled from "styled-components";
 
 export const SideBar = ({ data }) => {
+  const [show, setShow] = useState(true);
   return (
-    <>
-      <Container key={data?.id} id={data.id}>
+    <div>
+      <Container
+        onClick={() => setShow((show) => !show)}
+        key={data?.id}
+        id={data.id}
+      >
         <IconContainer>
           <img src={data.Icon} alt="" />
         </IconContainer>
@@ -15,13 +20,15 @@ export const SideBar = ({ data }) => {
           <img src={Arrow} alt="" />
         </ArrowContainer>
       </Container>
-      <DropdownContainer>
-        {data?.subLinks &&
-          data.subLinks.map((subLink) => {
-            return <SubLink>{subLink}</SubLink>;
-          })}
-      </DropdownContainer>
-    </>
+      {show && (
+        <DropdownContainer>
+          {data?.subLinks &&
+            data.subLinks.map((subLink) => {
+              return <SubLink>{subLink}</SubLink>;
+            })}
+        </DropdownContainer>
+      )}
+    </div>
   );
 };
 
@@ -35,6 +42,7 @@ const Container = tw(StyledContainer)`
     items-center
     pr-[20px]
     cursor-pointer
+    
 `;
 const IconContainer = tw.div`
     mr-18    
@@ -51,10 +59,13 @@ const Text = tw(StyledText)`
     font-bold
 `;
 
-const DropdownContainer = tw.div`
+const StyledDropdown = styled.div``;
+
+const DropdownContainer = tw(StyledDropdown)`
     ml-[22px]
     text-textSecondary
     text-md
+    delay-1000
     font-bold
 `;
 
