@@ -2,7 +2,6 @@ import styled from "styled-components";
 import tw from "tailwind-styled-components/dist/tailwind";
 
 const StyledSelect = styled.select`
-  margin-right: 2rem;
   padding-right: 2rem;
 `;
 
@@ -13,7 +12,7 @@ export const Select = tw(StyledSelect)`
   border-r 
   text-md 
   outline-none 
-  py-2.5 
+  py-[11.5px]
   rounded-sm 
   px-4 
 `;
@@ -73,7 +72,7 @@ export const Searchsm = tw(StyledSearchsm)`
   w-[350px] 
   mr-24 
   rounded-sm 
-  py-8 
+  py-[10px]
   border-border 
   outline-none 
   bg-white

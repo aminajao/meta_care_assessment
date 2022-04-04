@@ -12,7 +12,7 @@ export const Container = tw.div`
 export const ChartContainer = styled.div`
   width: 100%;
   height: 225px;
-  padding-top: 16px;
+  padding-top: 18px;
   position: relative;
   margin: auto;
   overflow: hidden;
